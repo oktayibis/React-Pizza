@@ -16,10 +16,16 @@ const reducer = (state, action) => {
         ...state,
         pizza: state.pizzas.find(pizza => action.payload === pizza.id)
       };
-    case "SUBMIT_PIZZA":
+    case "ADD_PIZZA":
       return {
         ...state,
-        pizzas: state.pizzas.push(action.payload)
+        pizzas: [action.payload, ...state.pizzas]
+      };
+      case "CHANGE_PIZZA":
+        let index = state.pizzas.indexOf(action.payload)
+      return {
+        ...state,
+        pizzas: state.pizzas.splice(index,1,action.payload)
       };
 
     default:
