@@ -5,7 +5,7 @@ const Pizza = props => {
   const clicklerHandle = (dispatch, e) => {
     const { pizza } = props;
     
-    
+    e.preventDefault();
     dispatch({ type: "EDIT_PIZZA", payload: pizza.id });
   };
 

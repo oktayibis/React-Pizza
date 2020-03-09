@@ -22,7 +22,7 @@ class PizzaList extends Component {
               <tbody>
               {
                 pizzas.map(pizza => {
-                  return <Pizza pizza={pizza}/>
+                  return <Pizza key={pizza.id} pizza={pizza}/>
                 })
               }
               </tbody>
@@ -36,20 +36,4 @@ class PizzaList extends Component {
 
 export default PizzaList;
 
-{
-  /* <table className="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Topping</th>
-            <th scope="col">Size</th>
-            <th scope="col">Vegetarian?</th>
-            <th scope="col">Edit</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            this.renderPizza()
-          }
-        </tbody>
-      </table> */
-}
+

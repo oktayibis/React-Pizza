@@ -22,10 +22,19 @@ const reducer = (state, action) => {
         pizzas: [action.payload, ...state.pizzas]
       };
       case "CHANGE_PIZZA":
-        let index = state.pizzas.indexOf(action.payload)
+        console.log(`Action : ${state.pizza.id}`);
+        console.log(`payload: ${action.payload}`);
+        
+        let index = state.pizzas.findIndex(pizza => pizza.id === state.pizza.id)
+        const pizzalist = state.pizzas;
+       
+        console.log(`index:  ${index}`);
+        console.log(`pizzalist: ${pizzalist}`);
+        pizzalist[index] = action.payload;
+        
       return {
         ...state,
-        pizzas: state.pizzas.splice(index,1,action.payload)
+        pizzas: pizzalist
       };
 
     default:
