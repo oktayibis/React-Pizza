@@ -48,8 +48,8 @@ const PizzaForm = () => {
           const newPizza = {
             ...pizza,
             topping: topping === null ? pizza.topping : topping,
-            size: size === null ? pizza.size : size,
-            vegetarian: vegetarian === null ? pizza.vegetarian : vegetarian
+            size: size ===null ? pizza.size : size,
+            vegetarian : vegetarian === null ? pizza.vegetarian : vegetarian
           };
 
           dispatch({ type: "CHANGE_PIZZA", payload: newPizza });
@@ -103,18 +103,18 @@ const PizzaForm = () => {
             </div>
             <div className="col">
               <button
-                onClick={changeHandle.bind(this, dispatch)}
-                type="submit"
-                className="btn btn-success"
-              >
-                Submit
-              </button>
-              <button
                 onClick={addPizza.bind(this, dispatch)}
                 type="submit"
-                className="btn btn-warning m-2"
+                className="btn btn-warning"
               >
                 Add Pizza
+              </button>
+              <button
+                onClick={changeHandle.bind(this, dispatch)}
+                type="submit"
+                className="btn btn-success m-2"
+              >
+                Submit
               </button>
               {/* <button
                 onClick={cancelHandle}
