@@ -105,24 +105,24 @@ const PizzaForm = () => {
               <button
                 onClick={addPizza.bind(this, dispatch)}
                 type="submit"
-                className="btn btn-success"
+                className="btn btn-warning"
               >
-                Submit
+                Add Pizza
               </button>
               <button
                 onClick={changeHandle.bind(this, dispatch)}
                 type="submit"
-                className="btn btn-warning m-2"
+                className="btn btn-success m-2"
               >
-                Change
+                Submit
               </button>
-              <button
+              {/* <button
                 onClick={cancelHandle}
                 type="submit"
                 className="btn btn-danger m-1"
               >
                 Cancel
-              </button>
+              </button> */}
             </div>
           </div>
         );
